@@ -29,3 +29,12 @@ function adicionarAmigo() {
     
     atualizarListaAmigos();
 }
+function atualizarListaAmigos() {
+    const listaElement = document.getElementById('listaAmigos');
+    listaElement.innerHTML = '';
+
+    amigos.forEach(amigo )
+    const li = document.createElement('li');
+    li.textContent = amigo;
+    listaElement.appendChild(li);
+}
