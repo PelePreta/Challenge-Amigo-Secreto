@@ -33,8 +33,19 @@ function atualizarListaAmigos() {
     const listaElement = document.getElementById('listaAmigos');
     listaElement.innerHTML = '';
 
-    amigos.forEach(amigo )
-    const li = document.createElement('li');
-    li.textContent = amigo;
-    listaElement.appendChild(li);
+    amigos.forEach(amigo => {
+        const li = document.createElement('li');
+        li.textContent = amigo;
+        listaElement.appendChild(li);
+    });
+}
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert('Adicione pelo menos um amigo antes de sortear!');
+        return;
+    }
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[indiceAleatorio];
+    const resultadoElement = document.getElementById('resultado');
+    resultadoElement.innerHTML = `<li>🎉 O amigo secreto sorteado é: ${amigoSorteado}</li>`;
 }
